@@ -2,15 +2,8 @@ body {
   margin: 0;
   padding: 10px;
   font-family: Ubuntu, Arial, Helvetica, sans-serif;
-}
-
-/*
-
-Style our app according to the provided design!
-
-green color -> #5f9341
-
-*/
+  min-width: 400px;
+}*/
 
 
 input {
