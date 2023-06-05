@@ -9,26 +9,26 @@ let inputsFromLocalStorage = JSON.parse(localStorage.getItem("myInputs"))
 
 if (inputsFromLocalStorage) {
   myInputs = inputsFromLocalStorage
-  renderInputs()
+  render(myInputs)
 }
 
 inputBtn?.addEventListener("click", function() {
   myInputs.push(inputEl.value)
   inputEl.value = ""
   localStorage.setItem("myInputs", JSON.stringify(myInputs))
-  renderInputs()
+  render(myInputs)
 })
 
 deleteBtn?.addEventListener("dblclick", function() {
   myInputs = []
   localStorage.clear()
-  ulEl.innerHTML = ""
+  render(myInputs)
 })
 
-function renderInputs() {
+function render(inputs) {
   let listItems = ""
-  for (let i=0; i<myInputs.length; i++) {
-    listItems += `<li>${myInputs[i]}</li>`
+  for (let i=0; i<inputs.length; i++) {
+    listItems += `<li>${inputs[i]}</li>`
   }
   ulEl.innerHTML = listItems
 }
