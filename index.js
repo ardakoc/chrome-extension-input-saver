@@ -1,7 +1,10 @@
 let myInputs = []
+
+const deleteBtn = document.getElementById("delete-btn")
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+
 let inputsFromLocalStorage = JSON.parse(localStorage.getItem("myInputs"))
 
 if (inputsFromLocalStorage) {
@@ -16,6 +19,11 @@ inputBtn?.addEventListener("click", function() {
   renderInputs()
 })
 
+deleteBtn?.addEventListener("dblclick", function() {
+  myInputs = []
+  localStorage.clear()
+  ulEl.innerHTML = ""
+})
 
 function renderInputs() {
   let listItems = ""
